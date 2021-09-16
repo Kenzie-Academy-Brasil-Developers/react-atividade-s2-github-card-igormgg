@@ -1,0 +1,17 @@
+form {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+form input {
+  width: 70%;
+}
+
+form button {
+  width: 28.5%;
+}
+
+form p {
+  color: red;
+}
