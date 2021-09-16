@@ -3,7 +3,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 
-const SearchBox = ({ setGithubSearch }) => {
+const SearchBox = ({ setGithubResult }) => {
   const formSchema = yup.object().shape({
     searchBox: yup.string().required("*Digite sua busca"),
   });
@@ -17,7 +17,10 @@ const SearchBox = ({ setGithubSearch }) => {
   });
 
   const onSubmit = (data) => {
-    setGithubSearch(data.searchBox);
+    fetch(`https://api.github.com/repos/${data.searchBox}`)
+      .then((response) => response.json())
+      .then((response) => setGithubResult(response))
+      .catch((err) => console.log(err));
   };
 
   return (

@@ -1,23 +1,11 @@
 import "./reset.css";
 import "./App.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import SearchBox from "./Components/SearchBox";
 import Card from "./Components/Card";
 
 function App() {
-  const [githubResult, setGithubResult] = useState("");
-  const [githubSearch, setGithubSearch] = useState("");
-  // const [githubSearch, setGithubSearch] = useState("facebook/react");
-
-  useEffect(() => {
-    fetch(`https://api.github.com/repos/${githubSearch}`)
-      .then((response) => response.json())
-      .then((response) => setGithubResult(response))
-      // .then((response) => console.log(response))
-      .catch((err) => console.log(err));
-  }, [githubSearch]);
-
-  console.log(githubResult);
+  const [githubResult, setGithubResult] = useState(null);
 
   return (
     <div className="App">
@@ -26,8 +14,8 @@ function App() {
       </header>
       <body>
         <div className="searchAndRepoContainer">
-          <SearchBox setGithubSearch={setGithubSearch} />
-          <Card githubResult={githubResult} />
+          <SearchBox setGithubResult={setGithubResult} />
+          {githubResult && <Card githubResult={githubResult} />}
         </div>
       </body>
     </div>
