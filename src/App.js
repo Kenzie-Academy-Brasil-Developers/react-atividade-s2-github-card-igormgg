@@ -6,7 +6,8 @@ import Card from "./Components/Card";
 
 function App() {
   const [githubResult, setGithubResult] = useState("");
-  const [githubSearch, setGithubSearch] = useState("facebook/react");
+  const [githubSearch, setGithubSearch] = useState("");
+  // const [githubSearch, setGithubSearch] = useState("facebook/react");
 
   useEffect(() => {
     fetch(`https://api.github.com/repos/${githubSearch}`)

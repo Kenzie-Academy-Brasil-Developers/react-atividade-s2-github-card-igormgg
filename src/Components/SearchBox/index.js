@@ -22,6 +22,7 @@ const SearchBox = ({ setGithubSearch }) => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
+      <h1>Busque um repositório no Github</h1>
       <input placeholder="user/repo" type="text" {...register("searchBox")} />
       <button>Pesquisar</button>
       <p>{errors.searchBox?.message}</p>

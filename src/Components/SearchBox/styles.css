@@ -4,12 +4,39 @@ form {
   margin-bottom: 10px;
 }
 
+form h1 {
+  margin: 5px auto;
+  font-size: calc(1rem + 1vmin);
+}
+
 form input {
   width: 70%;
+  height: 50px;
+  font-size: calc(0.3rem + 1vmin);
+  border: none;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  box-sizing: border-box;
+}
+
+form input:hover {
+  filter: brightness(0.9);
 }
 
 form button {
-  width: 28.5%;
+  width: 30%;
+  font-size: calc(0.5rem + 1vmin);
+  background-color: #0079fc;
+  color: white;
+  border: none;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-sizing: border-box;
+}
+
+form button:hover {
+  filter: brightness(0.9);
+  cursor: pointer;
 }
 
 form p {

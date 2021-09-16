@@ -12,7 +12,8 @@ html {
 }
 
 .App-header {
-  width: 600px;
+  width: 100%;
+  max-width: 600px;
   height: 10%;
   background-color: black;
   display: flex;
@@ -21,6 +22,7 @@ html {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  text-transform: uppercase;
 }
 
 body {
@@ -33,7 +35,10 @@ body {
 }
 
 .searchAndRepoContainer {
-  width: 600px;
+  width: 100%;
+  max-width: 600px;
   height: 450px;
   background-color: lightblue;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
